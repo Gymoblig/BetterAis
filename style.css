@@ -1,0 +1,298 @@
+:root {
+    --background-gradient-dark: linear-gradient(180deg, #1e1e1e, #2e2e2e);
+    --background-gradient-light: linear-gradient(180deg, #ffffff, #f0f0f0);
+    --text-color-dark: #e0e0e0;
+    --text-color-light: #333333;
+    --link-color: #4a90e2; /* Default link color */
+    --header-color-dark: linear-gradient(180deg, var(--link-color), #1e1e1e);
+    --header-color-light: linear-gradient(180deg, var(--link-color), #ffffff);
+    --link-hover-dark: #336799; /* Dark mode hover color */
+    --link-hover-light: #295786; /* Light mode hover color */
+    --glow-dark: var(--link-color); /* Glow color for dark mode */
+    --glow-light: var(--link-color); /* Glow color for light mode */
+    --zasadka-dark: #1a1a1a;
+    --zasadka-light: #afafaf;
+}
+
+body {
+    font-family: 'Arial', sans-serif !important;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 100% !important;
+    margin:0;
+    padding: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: var(--background-gradient-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode #hlavicka {
+    background: var(--header-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .login-container, 
+body.dark-mode .highlightbox {
+    background: linear-gradient(135deg, #2e2e2e, #1e1e1e);
+    color: var(--text-color-dark);
+    box-shadow: 0 0 15px var(--glow-dark), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .small, 
+body.dark-mode .loginform-section, 
+body.dark-mode #univerzita,
+body.dark-mode #svatek {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="password"] {
+    background-color: #333;
+    color: var(--text-color-dark);
+}
+
+body.dark-mode input[type="submit"] {
+    background-color: var(--link-color);
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: var(--link-hover-dark);
+}
+
+body.dark-mode a {
+    color: var(--link-color);
+}
+
+body.dark-mode .tip {
+    color: var(--text-color-dark);
+}
+
+/* Light mode styles */
+body.light-mode {
+    background: var(--background-gradient-light);
+    color: var(--text-color-light);
+}
+
+body.light-mode #hlavicka {
+    background: var(--header-color-light);
+    color: var(--text-color-light);
+}
+
+body.light-mode .login-container, 
+body.light-mode .highlightbox {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    color: var(--text-color-light);
+    box-shadow: 0 0 15px var(--glow-light), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .small, 
+body.light-mode .loginform-section, 
+body.light-mode #univerzita,
+body.light-mode #svatek {
+    color: var(--text-color-light);
+}
+
+body.light-mode input[type="text"], 
+body.light-mode input[type="password"] {
+    background-color: #f0f0f0;
+    color: var(--text-color-light);
+}
+
+body.light-mode input[type="submit"] {
+    background-color: var(--link-color);
+}
+
+body.light-mode input[type="submit"]:hover {
+    background-color: var(--link-hover-light);
+}
+
+body.light-mode a {
+    color: var(--link-color);
+}
+
+body.light-mode .tip {
+    color: var(--text-color-light);
+}
+
+/* Common styles remain unchanged */
+#ie1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#svatek {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+#svatek span {
+    margin: 0 5px;
+}
+
+#vlajky a {
+    margin: 0 5px;
+}
+
+#univerzita {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.helpinbreadcrumbs, #titulek {
+    display: none !important;
+}
+
+.breadcrumb, [aria-label="breadcrumb"] {
+    background-color: var(--zasadka-dark) !important;
+    border-radius: 20px !important;
+}
+
+body.light-mode .breadcrumb, body.light-mode [aria-label="breadcrumb"] {
+    background-color: var(--zasadka-light) !important;
+    border-radius: 20px !important;
+
+}
+
+
+.login-container, .highlightbox {
+    position: relative; /* Always center the form */
+    top: 55%;
+    left: 45%;
+    transform: translate(-50%, -35%);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    border-radius: 20px !important;
+    border-color: #1a1a1a00 !important;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #444 !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="submit"] {
+    color: white !important;
+    padding: 15px;
+    border: none !important;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.tip {
+    font-size: 14px;
+    margin-top: 20px;
+}
+.polozky-obal {
+    background-color: var(--background-gradient-dark) !important;
+    min-height: 200px !important;
+    font-size: 15px;
+    border-color: var(--link-color) !important;
+}
+
+body.light-mode .polozky-obal {
+    background-color: var(--background-gradient-light) !important;
+    border-color: var(--link-color) !important;
+}
+
+.vsechny-polozky {
+    border-radius: 40px;
+}
+
+/* Light mode variation for vsechny-polozky remains unchanged as no additional styling is defined */
+
+.sekce-nadpis {
+    background-color: var(--background-gradient-dark) !important;
+    color: var(--text-color-dark) !important;
+    text-align: left;
+    padding-right: 500px;
+}
+
+body.light-mode .sekce-nadpis {
+    background-color: var(--background-gradient-light) !important;
+    color: var(--text-color-light) !important;
+}
+
+.zasadka, .zasadky-crit, .zasadky-info {
+    max-width: 500px;
+    border-radius: 20px !important;
+    background-color: var(--zasadka-dark) !important;
+}
+
+body.light-mode .zasadka, 
+body.light-mode .zasadky-crit, 
+body.light-mode .zasadky-info {
+    background-color: var(--zasadka-light) !important;
+}
+
+.odsazena {
+    background-color: var(--zasadka-dark) !important;
+    border-radius: 20px !important;
+}
+
+body.light-mode .odsazena {
+    background-color: var(--zasadka-light) !important;
+}
+
+.odsazena.active {
+    background-color: var(--text-color-light) !important;
+    border-radius: 20px !important;
+}
+
+body.light-mode .odsazena.active {
+    background-color: var(--text-color-dark) !important;
+}
+
+.zahlavi {
+    background-color: var(--zasadka-dark) !important;
+    color: var(--link-color) !important;
+    border-radius: 20px !important;
+}
+
+body.light-mode .zahlavi {
+    background-color: var(--zasadka-light) !important;
+    color: var(--link-color) !important;
+}
+
+.portal_menu_hole {
+    border: none !important;
+}
+
+
+.loginform-section{
+    background-color: var(--zasadka-dark) !important;
+    border-radius: 20px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body.light-mode .loginform-section{
+    background-color: var(--zasadka-light) !important;
+    border-radius: 20px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+

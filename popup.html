@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            --background-gradient-dark: linear-gradient(180deg, #1e1e1e, #2e2e2e);
+            --background-gradient-light: linear-gradient(180deg, #ffffff, #f0f0f0);
+            --text-color-dark: #e0e0e0;
+            --text-color-light: #333333;
+            --link-color: #4a90e2;
+            --link-hover-dark: #336799;
+            --link-hover-light: #295786;
+            --glow-dark: rgba(74, 144, 226, 0.6);
+            --glow-light: rgba(41, 87, 134, 0.6);
+                    --shadow-color-dark: rgba(0, 123, 255, 0.5); /* Custom shadow color for dark mode */
+                    --shadow-color-light: rgba(0, 123, 255, 0.3); /* Custom shadow color for light mode */
+        }
+                
+                body {
+                    font-family: Arial, sans-serif;
+                    width: 200px;
+                    padding: 20px;
+                    position: relative;
+                    transition: all 0.3s ease;
+                    background-color: var(--background-gradient-dark);
+                    border-radius: 20px;
+                }
+        
+                .dark-mode {
+                    background: var(--background-gradient-dark) !important;
+                    color: var(--text-color-dark) !important;
+                }
+                .dark-mode .button {
+                    background-color: var(--link-color) !important;
+                    color: white !important;
+                }
+                .dark-mode .button:hover {
+                    background-color: var(--link-hover-dark) !important;
+                }
+                .dark-mode .login-container, 
+                .dark-mode .highlightbox {
+                    box-shadow: 0 0 15px var(--shadow-color-dark); /* Custom shadow color */
+                }
+        
+                /* Light mode styles */
+                .light-mode {
+                    background: var(--background-gradient-light) !important;
+                    color: var(--text-color-light) !important;
+                }
+                .light-mode .button {
+                    background-color: var(--link-color) !important;
+                    color: white !important;
+                }
+                .light-mode .button:hover {
+                    background-color: var(--link-hover-light) !important;
+                }
+                .light-mode .login-container, 
+                .light-mode .highlightbox {
+                    box-shadow: 0 0 15px var(--shadow-color-light); /* Custom shadow color */
+                }
+        
+                /* Center the h1 */
+                h1 {
+                    font-size: 16px;
+                    margin: 0 0 20px 0;
+                    text-align: center;
+                }
+        
+                /* Make the labels stand out */
+                label {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--link-color);
+                    margin: 0 10px;
+                }
+        
+                /* Style the button */
+                .button {
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                    margin: 20px 0;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 25px; /* Make it rounded */
+                    cursor: pointer;
+                    border: none;
+                    background-color: var(--link-color);
+                    color: white;
+                    transition: background-color 0.3s;
+                }
+        
+                .button:hover {
+                    background-color: var(--link-hover-dark);
+                }
+        
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 60px;
+                    height: 34px;
+                }
+        
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+        
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    transition: .4s;
+                    border-radius: 34px;
+                }
+        
+                .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    transition: .4s;
+                    border-radius: 50%;
+                }
+        
+                input:checked + .slider {
+                    background-color: var(--link-color);
+                }
+        
+                input:checked + .slider:before {
+                    transform: translateX(26px);
+                }
+        
+                .color-option {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    margin: 5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: relative;
+                }
+        
+                .color-option.selected::after {
+                    content: 'X';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-weight: bold;
+                    font-family: Arial, sans-serif; /* Ensure proper font rendering */
+                }
+            </style>
+        </head>
+        <body>
+            <h1>STUBA Extension</h1>
+            <div>
+                <label for="themeSwitch">Dark</label>
+                <label class="switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <span class="slider"></span>
+                </label>
+                <label >Light</label>
+                <div class="color-scheme">
+                    <span class="color-option" style="background-color: #4a90e2;" data-color="#4a90e2"></span>
+                    <span class="color-option" style="background-color: #e94e77;" data-color="#e94e77"></span>
+                    <span class="color-option" style="background-color: #39a78e;" data-color="#39a78e"></span>
+                    <span class="color-option" style="background-color: #f39c12;" data-color="#f39c12"></span>
+                    <span class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></span>
+                    <span class="color-option" style="background-color: #c0392b;" data-color="#c0392b"></span>
+                    <span class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></span>
+                    <span class="color-option" style="background-color: #3498db;" data-color="#3498db"></span>
+                    <span class="color-option" style="background-color: #34495e;" data-color="#34495e"></span>
+                    <span class="color-option" style="background-color: #16a085;" data-color="#16a085"></span>
+                    <span class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></span>
+                    <span class="color-option" style="background-color: #2980b9;" data-color="#2980b9"></span>
+                    <span class="color-option" style="background-color: #d35400;" data-color="#d35400"></span>
+                    <span class="color-option" style="background-color: #7f8c8d;" data-color="#7f8c8d"></span>
+                    <span class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></span>
+
+                    <!-- Additional color options -->
+                    <span class="color-option" style="background-color: #ff6b6b;" data-color="#ff6b6b"></span>
+                    <span class="color-option" style="background-color: #5f27cd;" data-color="#5f27cd"></span>
+                    <span class="color-option" style="background-color: #2e86de;" data-color="#2e86de"></span>
+                    <span class="color-option" style="background-color: #00cec9;" data-color="#00cec9"></span>
+                    <span class="color-option" style="background-color: #fd79a8;" data-color="#fd79a8"></span>
+                    <span class="color-option" style="background-color: #6c5ce7;" data-color="#6c5ce7"></span>
+                    <span class="color-option" style="background-color: #00b894;" data-color="#00b894"></span>
+                    <span class="color-option" style="background-color: #e17055;" data-color="#e17055"></span>
+                    <span class="color-option" style="background-color: #fdcb6e;" data-color="#fdcb6e"></span>
+                    <span class="color-option" style="background-color: #e84393;" data-color="#e84393"></span>
+                    <span class="color-option" style="background-color: #0984e3;" data-color="#0984e3"></span>
+                    <span class="color-option" style="background-color: #6c5ce7;" data-color="#6c5ce7"></span>
+                    <span class="color-option" style="background-color: #74b9ff;" data-color="#74b9ff"></span>
+                    <span class="color-option" style="background-color: #00b894;" data-color="#00b894"></span>
+                    <span class="color-option" style="background-color: #ffeaa7;" data-color="#ffeaa7"></span>
+
+                </div>
+                
+                <button id="reload-button" class="button">Reload Extension</button>
+            </div>
+            <script src="popup.js"></script>
+        </body>
+        </html>
+        

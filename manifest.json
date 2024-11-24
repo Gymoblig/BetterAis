@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "BetterAis",
+    "version": "0.1",
+    "description": "Upravuje dizajn stránky is.stuba.sk",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "host_permissions": ["*://*.stuba.sk/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.stuba.sk/*"],
+            "js": ["content.js"],
+            "css": ["style.css"]
+        }
+    ]
+}
