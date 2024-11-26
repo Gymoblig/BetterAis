@@ -357,3 +357,46 @@ body.light_mode #finder {
 #finder a span, #otevrit-vse, #zavrit-vse {
     color: var(--text-color-dark) !important; /* Use variable for text color */
 }
+
+
+
+/* Skrytie <use> elementu pre konkrétne SVG elementy */
+svg[data-sysid="menu-eagenda"] use {
+    display: none;
+}
+svg[data-sysid="menu-dokumentace"] use {
+    display: none;
+}
+svg[data-sysid="menu-elearning"] use {
+    display: none;
+}
+svg[data-sysid="menu-info"] use {
+    display: none;
+}
+svg[data-sysid="menu-os-management"] use {
+    display: none;
+}
+svg[data-sysid="menu-nastaveni"] use {
+    display: none;
+}
+svg[data-sysid="menu-personalizace"] use {
+    display: none;
+}
+svg[data-sysid="menu-technologie"] use {
+    display: none;
+}
+svg[data-sysid="menu-moje-studium"] use {
+    display: none;
+}
+svg[data-sysid="menu-veda-vyzkum"] use {
+    display: none;
+}
+svg[data-sysid="menu-herna"] use {
+    display: none;
+}
+svg[data-sysid="menu-osobni-udaje"] use {
+    display: none;
+}
+
+
+

@@ -10,205 +10,218 @@
             --link-color: #4a90e2;
             --link-hover-dark: #336799;
             --link-hover-light: #295786;
-            --glow-dark: rgba(74, 144, 226, 0.6);
-            --glow-light: rgba(41, 87, 134, 0.6);
-                    --shadow-color-dark: rgba(0, 123, 255, 0.5); /* Custom shadow color for dark mode */
-                    --shadow-color-light: rgba(0, 123, 255, 0.3); /* Custom shadow color for light mode */
+            --shadow-color-dark: rgba(0, 123, 255, 0.5);
+            --shadow-color-light: rgba(0, 123, 255, 0.3);
+            --button-color-dark: #4a90e2;
+            --button-color-light: #4a90e2;
         }
-                
-                body {
-                    font-family: Arial, sans-serif;
-                    width: 200px;
-                    padding: 20px;
-                    position: relative;
-                    transition: all 0.3s ease;
-                    background-color: var(--background-gradient-dark);
-                    border-radius: 20px;
-                }
-        
-                .dark-mode {
-                    background: var(--background-gradient-dark) !important;
-                    color: var(--text-color-dark) !important;
-                }
-                .dark-mode .button {
-                    background-color: var(--link-color) !important;
-                    color: white !important;
-                }
-                .dark-mode .button:hover {
-                    background-color: var(--link-hover-dark) !important;
-                }
-                .dark-mode .login-container, 
-                .dark-mode .highlightbox {
-                    box-shadow: 0 0 15px var(--shadow-color-dark); /* Custom shadow color */
-                }
-        
-                /* Light mode styles */
-                .light-mode {
-                    background: var(--background-gradient-light) !important;
-                    color: var(--text-color-light) !important;
-                }
-                .light-mode .button {
-                    background-color: var(--link-color) !important;
-                    color: white !important;
-                }
-                .light-mode .button:hover {
-                    background-color: var(--link-hover-light) !important;
-                }
-                .light-mode .login-container, 
-                .light-mode .highlightbox {
-                    box-shadow: 0 0 15px var(--shadow-color-light); /* Custom shadow color */
-                }
-        
-                /* Center the h1 */
-                h1 {
-                    font-size: 16px;
-                    margin: 0 0 20px 0;
-                    text-align: center;
-                }
-        
-                /* Make the labels stand out */
-                label {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: var(--link-color);
-                    margin: 0 10px;
-                }
-        
-                /* Style the button */
-                .button {
-                    display: block;
-                    width: 100%;
-                    padding: 10px;
-                    margin: 20px 0;
-                    text-align: center;
-                    text-decoration: none;
-                    border-radius: 25px; /* Make it rounded */
-                    cursor: pointer;
-                    border: none;
-                    background-color: var(--link-color);
-                    color: white;
-                    transition: background-color 0.3s;
-                }
-        
-                .button:hover {
-                    background-color: var(--link-hover-dark);
-                }
-        
-                .switch {
-                    position: relative;
-                    display: inline-block;
-                    width: 60px;
-                    height: 34px;
-                }
-        
-                .switch input {
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                }
-        
-                .slider {
-                    position: absolute;
-                    cursor: pointer;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: #ccc;
-                    transition: .4s;
-                    border-radius: 34px;
-                }
-        
-                .slider:before {
-                    position: absolute;
-                    content: "";
-                    height: 26px;
-                    width: 26px;
-                    left: 4px;
-                    bottom: 4px;
-                    background-color: white;
-                    transition: .4s;
-                    border-radius: 50%;
-                }
-        
-                input:checked + .slider {
-                    background-color: var(--link-color);
-                }
-        
-                input:checked + .slider:before {
-                    transform: translateX(26px);
-                }
-        
-                .color-option {
-                    display: inline-block;
-                    width: 30px;
-                    height: 30px;
-                    margin: 5px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    position: relative;
-                }
-        
-                .color-option.selected::after {
-                    content: 'X';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    color: white;
-                    font-weight: bold;
-                    font-family: Arial, sans-serif; /* Ensure proper font rendering */
-                }
-            </style>
-        </head>
-        <body>
-            <h1>STUBA Extension</h1>
-            <div>
-                <label for="themeSwitch">Dark</label>
-                <label class="switch">
-                    <input type="checkbox" id="themeSwitch">
-                    <span class="slider"></span>
-                </label>
-                <label >Light</label>
-                <div class="color-scheme">
-                    <span class="color-option" style="background-color: #4a90e2;" data-color="#4a90e2"></span>
-                    <span class="color-option" style="background-color: #e94e77;" data-color="#e94e77"></span>
-                    <span class="color-option" style="background-color: #39a78e;" data-color="#39a78e"></span>
-                    <span class="color-option" style="background-color: #f39c12;" data-color="#f39c12"></span>
-                    <span class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></span>
-                    <span class="color-option" style="background-color: #c0392b;" data-color="#c0392b"></span>
-                    <span class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></span>
-                    <span class="color-option" style="background-color: #3498db;" data-color="#3498db"></span>
-                    <span class="color-option" style="background-color: #34495e;" data-color="#34495e"></span>
-                    <span class="color-option" style="background-color: #16a085;" data-color="#16a085"></span>
-                    <span class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></span>
-                    <span class="color-option" style="background-color: #2980b9;" data-color="#2980b9"></span>
-                    <span class="color-option" style="background-color: #d35400;" data-color="#d35400"></span>
-                    <span class="color-option" style="background-color: #7f8c8d;" data-color="#7f8c8d"></span>
-                    <span class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></span>
-                    <span class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></span>
-                    <span class="color-option" style="background-color: #2c3e50;" data-color="#2c3e50"></span>
-                    <span class="color-option" style="background-color: #f1c40f;" data-color="#f1c40f"></span>
-                    <span class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></span>
-                    <span class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></span>
-                    <span class="color-option" style="background-color: #ecf0f1;" data-color="#ecf0f1"></span>
-                    <span class="color-option" style="background-color: #95a5a6;" data-color="#95a5a6"></span>
-                    <span class="color-option" style="background-color: #ff5733;" data-color="#ff5733"></span>
-                    <span class="color-option" style="background-color: #33ff57;" data-color="#33ff57"></span>
-                    <span class="color-option" style="background-color: #3357ff;" data-color="#3357ff"></span>
-                    <span class="color-option" style="background-color: #ff33a5;" data-color="#ff33a5"></span>
-                    <span class="color-option" style="background-color: #a533ff;" data-color="#a533ff"></span>
-                    <span class="color-option" style="background-color: #33ffa5;" data-color="#33ffa5"></span>
-                    <span class="color-option" style="background-color: #ff6f33;" data-color="#ff6f33"></span>
-                    <span class="color-option" style="background-color: #ff33d4;" data-color="#ff33d4"></span>
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            background-color: var(--background-gradient-dark) !important;
+            border-radius: 20px;
+            color: var(--text-color-dark) !important;
+        }
+
+        body.dark-mode {
+            background: var(--background-gradient-dark) !important;
+            color: var(--text-color-dark) !important;
+        }
+        .dark-mode .button {
+            background-color: var(--button-color-dark) !important;
+            color: white !important;
+        }
+        .dark-mode .button:hover {
+            background-color: var(--link-hover-dark) !important;
+        }
+        .dark-mode .login-container, 
+        .dark-mode .highlightbox {
+            box-shadow: 0 0 15px var(--shadow-color-dark);
+        }
+
+        body.light-mode {
+            background: var(--background-gradient-light) !important;
+            color: var(--text-color-light) !important;
+        }
+        .light-mode .button {
+            background-color: var(--button-color-light) !important;
+            color: white !important;
+        }
+        .light-mode .button:hover {
+            background-color: var(--link-hover-light) !important;
+        }
+        .light-mode .login-container, 
+        .light-mode .highlightbox {
+            box-shadow: 0 0 15px var(--shadow-color-light);
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .switch-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--link-color);
+            flex: 1;
+            text-align: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--link-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .color-scheme {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .color-option {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .color-option.selected::after {
+            content: '\2714';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            cursor: pointer;
+            border: none;
+            background-color: var(--button-color-dark);
+            color: white;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: var(--link-hover-dark);
+        }
+    </style>
+</head>
+<body>
+    <h1>STUBA Extension</h1>
+    <div class="switch-container">
+        <label class="switch-label" for="themeSwitch">Dark</label>
+        <label class="switch">
+            <input type="checkbox" id="themeSwitch">
+            <span class="slider"></span>
+        </label>
+        <label class="switch-label" for="themeSwitch">Light</label>
+    </div>
+    <div class="color-scheme">
+        <span class="color-option" style="background-color: #4a90e2;" data-color="#4a90e2"></span>
+        <span class="color-option" style="background-color: #e94e77;" data-color="#e94e77"></span>
+        <span class="color-option" style="background-color: #39a78e;" data-color="#39a78e"></span>
+        <span class="color-option" style="background-color: #f39c12;" data-color="#f39c12"></span>
+        <span class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></span>
+        <span class="color-option" style="background-color: #c0392b;" data-color="#c0392b"></span>
+        <span class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></span>
+        <span class="color-option" style="background-color: #3498db;" data-color="#3498db"></span>
+        <span class="color-option" style="background-color: #34495e;" data-color="#34495e"></span>
+        <span class="color-option" style="background-color: #16a085;" data-color="#16a085"></span>
+        <span class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></span>
+        <span class="color-option" style="background-color: #2980b9;" data-color="#2980b9"></span>
+        <span class="color-option" style="background-color: #d35400;" data-color="#d35400"></span>
+        <span class="color-option" style="background-color: #7f8c8d;" data-color="#7f8c8d"></span>
+        <span class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></span>
+        <span class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></span>
+        <span class="color-option" style="background-color: #2c3e50;" data-color="#2c3e50"></span>
+        <span class="color-option" style="background-color: #f1c40f;" data-color="#f1c40f"></span>
+        <span class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></span>
+        <span class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></span>
+        <span class="color-option" style="background-color: #ecf0f1;" data-color="#ecf0f1"></span>
+        <span class="color-option" style="background-color: #95a5a6;" data-color="#95a5a6"></span>
+        <span class="color-option" style="background-color: #ff5733;" data-color="#ff5733"></span>
+        <span class="color-option" style="background-color: #33ff57;" data-color="#33ff57"></span>
+            <span class="color-option" style="background-color: #3357ff;" data-color="#3357ff"></span>
+            <span class="color-option" style="background-color: #ff33a5;" data-color="#ff33a5"></span>
+            <span class="color-option" style="background-color: #a533ff;" data-color="#a533ff"></span>
+            <span class="color-option" style="background-color: #33ffa5;" data-color="#33ffa5"></span>
+            <span class="color-option" style="background-color: #ff6f33;" data-color="#ff6f33"></span>
+            <span class="color-option" style="background-color: #ff33d4;" data-color="#ff33d4"></span>
+
+    </div>
+    
+    <button id="reload-button" class="button">Reload Extension</button>
+    <script src="popup.js"></script>
+</body>
+</html>
 
 
 
-                </div>
-                
-                <button id="reload-button" class="button">Reload Extension</button>
-            </div>
-            <script src="popup.js"></script>
-        </body>
-        </html>
-        
+
