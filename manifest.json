@@ -1,73 +1,36 @@
 {
-    "manifest_version": 3,
-    "name": "BetterAis",
-    "version": "0.2",
-    "description": "Upravuje dizajn stránky is.stuba.sk",
-    "permissions": ["storage", "activeTab", "scripting"],
-    "host_permissions": ["*://*.stuba.sk/*"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
-    },
-    "content_scripts": [
-      {
-        "matches": ["*://*.stuba.sk/*"],
-        "js": ["content.js"],
-        "css": ["style.css"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": ["icons/gifs/info.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/agenda.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/dokumentacia.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/elearning.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/manazement.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/nast.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/prisp.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/siet.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/studium.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/veda.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/zabava.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      },
-      {
-        "resources": ["icons/gifs/ochrana.gif"],
-        "matches": ["*://*.stuba.sk/*"]
-      }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "BetterAis",
+  "version": "1.1",
+  "description": "Visual change of the is.stuba.sk website.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://is.stuba.sk/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://is.stuba.sk/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

@@ -1,122 +1,131 @@
 :root {
-    --background-gradient-dark: linear-gradient(180deg, #1e1e1e, #2e2e2e);
-    --background-gradient-light: linear-gradient(180deg, #ffffff, #f0f0f0);
-    --text-color-dark: #e0e0e0;
-    --text-color-light: #333333;
-    --link-color: #4a90e2; /* Default link color */
-    --header-color-dark: linear-gradient(180deg, var(--link-color), #1e1e1e);
-    --header-color-light: linear-gradient(180deg, var(--link-color), #ffffff);
-    --glow-dark: var(--link-color); /* Glow color for dark mode */
-    --glow-light: var(--link-color); /* Glow color for light mode */
+    --bg-dark: linear-gradient(180deg, #1e1e1e, #2e2e2e);
+    --bg-light: linear-gradient(180deg, #ffffff, #f0f0f0);
+    --text-dark: #e0e0e0;
+    --text-light: #333333;
+    --link: #4a90e2;
+    --header-dark: linear-gradient(180deg, var(--link), #1e1e1e);
+    --header-light: linear-gradient(180deg, var(--link), #ffffff);
     --zasadka-dark: #1a1a1a;
     --zasadka-light: #e9e9e9;
 }
 
+/* Base styles */
 body {
-    font-family: 'Arial', sans-serif !important;
-    position: relative;
+    font-family: Arial, sans-serif !important;
     transition: all 0.3s ease;
     width: 100% !important;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
-/* Dark mode styles */
+/* Combined dark/light mode styles */
 body.dark-mode {
-    background: var(--background-gradient-dark);
-    color: var(--text-color-dark);
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.light-mode {
+    background: var(--bg-light);
+    color: var(--text-light);
 }
 
 body.dark-mode #hlavicka {
-    background: var(--header-color-dark);
-    color: var(--text-color-dark);
+    background: var(--header-dark);
+    color: var(--text-dark);
+}
+
+body.light-mode #hlavicka {
+    background: var(--header-light);
+    color: var(--text-light);
+}
+
+/* Container styles - combined */
+body.dark-mode .login-container, 
+body.dark-mode .highlightbox,
+body.dark-mode .loginform_infobox,
+body.dark-mode .loginform-section {
+    background: var(--zasadka-dark) !important;
+    color: var(--text-dark);
+    border-radius: 20px !important;
+}
+
+
+body.light-mode .login-container, 
+body.light-mode .highlightbox,
+body.light-mode .loginform_infobox,
+body.light-mode .loginform-section {
+    background: var(--zasadka-light) !important;
+    color: var(--text-light);
+    border-radius: 20px !important;
 }
 
 body.dark-mode .login-container, 
 body.dark-mode .highlightbox {
-    background: linear-gradient(135deg, #2e2e2e, #1e1e1e);
-    color: var(--text-color-dark);
-    box-shadow: 0 0 15px var(--glow-dark), 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .small, 
-body.dark-mode .loginform-section, 
-body.dark-mode #univerzita,
-body.dark-mode #svatek {
-    color: var(--text-color-dark);
-}
-
-body.dark-mode input[type="text"], 
-body.dark-mode input[type="password"] {
-    background-color: #333;
-    color: var(--text-color-dark);
-}
-
-body.dark-mode input[type="submit"], body.dark_mode input[type="button"]  {
-    background-color: var(--link-color) !important;
-    border-radius: 20px !important;
-}
-
-body.dark-mode input[type="submit"]:hover, body.dark_mode input[type="button"]:hover {
-    background-color: var(--text-color-light) !important;
-}
-
-body.dark-mode a {
-    color: var(--link-color);
-}
-
-body.dark-mode .tip {
-    color: var(--text-color-dark);
-}
-
-/* Light mode styles */
-body.light-mode {
-    background: var(--background-gradient-light);
-    color: var(--text-color-light);
-}
-
-body.light-mode #hlavicka {
-    background: var(--header-color-light);
-    color: var(--text-color-light);
+    box-shadow: 0 0 15px var(--link), 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 body.light-mode .login-container, 
 body.light-mode .highlightbox {
-    background: linear-gradient(135deg, #ffffff, #f0f0f0);
-    color: var(--text-color-light);
-    box-shadow: 0 0 15px var(--glow-light), 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px var(--link), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Text elements - combined */
+body.dark-mode .small, 
+body.dark-mode .loginform-section, 
+body.dark-mode #univerzita,
+body.dark-mode #svatek,
+body.dark-mode .tip,
+body.dark-mode .login-input-label {
+    color: var(--text-dark) !important;
 }
 
 body.light-mode .small, 
 body.light-mode .loginform-section, 
-body.light-mode #svatek {
-    color: var(--text-color-light);
+body.light-mode #svatek,
+body.light-mode .tip,
+body.light-mode .login-input-label {
+    color: var(--text-light) !important;
+}
+
+/* Input styles - combined */
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="password"] {
+    background-color: #333;
+    color: var(--text-dark);
 }
 
 body.light-mode input[type="text"], 
 body.light-mode input[type="password"] {
     background-color: #f0f0f0;
-    color: var(--text-color-light);
+    color: var(--text-light);
 }
 
-body.light-mode input[type="submit"], body.light_mode input[type="button"]  {
-    background-color: var(--link-color);
+body.dark-mode input[type="submit"], 
+body.dark-mode input[type="button"],
+body.light-mode input[type="submit"], 
+body.light-mode input[type="button"] {
+    background-color: var(--link) !important;
     border-radius: 20px !important;
 }
 
-body.light-mode input[type="submit"]:hover, body.light_mode input[type="button"]:hover {
-    background-color: var(--text-color-dark) !important;
+body.dark-mode input[type="submit"]:hover, 
+body.dark-mode input[type="button"]:hover {
+    background-color: var(--text-light) !important;
 }
 
+body.light-mode input[type="submit"]:hover, 
+body.light-mode input[type="button"]:hover {
+    background-color: var(--text-dark) !important;
+}
+
+/* Links */
+body.dark-mode a,
 body.light-mode a {
-    color: var(--link-color);
+    color: var(--link);
 }
 
-body.light-mode .tip {
-    color: var(--text-color-light);
-}
-
-/* Common styles remain unchanged */
+/* Common element styles */
 #ie1 {
     display: flex;
     justify-content: space-between;
@@ -143,33 +152,48 @@ body.light-mode .tip {
     margin: 10px 0;
 }
 
+[aria-label="breadcrumb"] {
+    margin-top: 20px !important;
+    border-radius: 20px !important;
+    height: fit-content !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+body.dark-mode [aria-label="breadcrumb"] {
+    background-color: var(--zasadka-dark) !important;
+}
+
+body.light-mode [aria-label="breadcrumb"] {
+    background-color: var(--zasadka-light) !important;
+}
+
+#login-btn {
+    margin-top: 20px !important;
+}
+
 .helpinbreadcrumbs, #titulek {
     display: none !important;
 }
 
-.breadcrumb, [aria-label="breadcrumb"] {
-    background-color: var(--zasadka-dark) !important;
-    border-radius: 20px !important;
+.login-input-label {
+    font-size: 18px !important;
+    font-weight: bold !important;
 }
 
-body.light-mode .breadcrumb, body.light-mode [aria-label="breadcrumb"] {
-    background-color: var(--zasadka-light) !important;
-    border-radius: 20px !important;
-
+.loginform-section {
+    padding: 10px !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
 }
-
 
 .login-container, .highlightbox {
-    left:45%;
-    position: relative; /* Always center the form */
-    transform: translate(-55%, 0%);
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
     border-radius: 20px !important;
-    border-color: #1a1a1a00 !important;
+    border-color: transparent !important;
+    z-index: 1000;
 }
 
 input[type="text"], input[type="password"] {
@@ -204,199 +228,160 @@ a:hover {
     font-size: 14px;
     margin-top: 20px;
 }
-.polozky-obal {
-    background-color: var(--background-gradient-dark) !important;
-    min-height: 200px !important;
-    font-size: 15px;
-    border-color: var(--link-color) !important;
+
+/* Polozky styles */
+body.dark-mode .polozky-obal {
+    background-color: var(--bg-dark) !important;
+    border-color: var(--link) !important;
 }
 
 body.light-mode .polozky-obal {
-    background-color: var(--background-gradient-light) !important;
-    border-color: var(--link-color) !important;
+    background-color: var(--bg-light) !important;
+    border-color: var(--link) !important;
+}
+
+.polozky-obal {
+    min-height: 200px !important;
+    font-size: 15px;
 }
 
 .vsechny-polozky {
     border-radius: 40px;
 }
 
-/* Light mode variation for vsechny-polozky remains unchanged as no additional styling is defined */
+/* Sekce styles */
+body.dark-mode .sekce-nadpis {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-dark) !important;
+}
+
+body.light-mode .sekce-nadpis {
+    background-color: var(--bg-light) !important;
+    color: var(--text-light) !important;
+}
 
 .sekce-nadpis {
-    background-color: var(--background-gradient-dark) !important;
-    color: var(--text-color-dark) !important;
     text-align: left;
     padding-right: 500px;
 }
 
-body.light-mode .sekce-nadpis {
-    background-color: var(--background-gradient-light) !important;
-    color: var(--text-color-light) !important;
-}
-
-.zasadka, .zasadky-crit, .zasadky-info {
-    max-width: 500px;
-    border-radius: 20px !important;
+/* Zasadka styles */
+body.dark-mode .zasadka, 
+body.dark-mode .zasadky-crit, 
+body.dark-mode .zasadky-info,
+body.dark-mode .odsazena,
+body.dark-mode .zahlavi {
     background-color: var(--zasadka-dark) !important;
 }
 
 body.light-mode .zasadka, 
 body.light-mode .zasadky-crit, 
-body.light-mode .zasadky-info {
+body.light-mode .zasadky-info,
+body.light-mode .odsazena,
+body.light-mode .zahlavi {
     background-color: var(--zasadka-light) !important;
 }
 
-.odsazena {
-    background-color: var(--zasadka-dark) !important;
+.zasadka, .zasadky-crit, .zasadky-info {
+    max-width: 500px;
     border-radius: 20px !important;
 }
 
-body.light-mode .odsazena {
-    background-color: var(--zasadka-light) !important;
-}
-
-.odsazena.active {
-    background-color: var(--text-color-light) !important;
-    border-radius: 20px !important;
-}
-
-body.light-mode .odsazena.active {
-    background-color: var(--text-color-dark) !important;
+.zasadky-info .odsazena, 
+.zasadky-crit .odsazena {
+    border-radius: 20px;
 }
 
 .zahlavi {
-    background-color: var(--zasadka-dark) !important;
-    color: var(--link-color) !important;
-    border-radius: 20px !important;
+    color: var(--link) !important;
 }
 
-body.light-mode .zahlavi {
-    background-color: var(--zasadka-light) !important;
-    color: var(--link-color) !important;
+.odsazena.active {
+    border-color: var(--link) !important;
+}
+
+body.dark-mode .odsazena.active {
+    background-color: var(--text-light) !important;
+}
+
+body.light-mode .odsazena.active {
+    background-color: var(--text-dark) !important;
+}
+
+/* Menitko styles */
+body.dark-mode #menitko #vsechny-polozky > .polozky-obal {
+    box-shadow: 0px 0px 0px 1px var(--zasadka-dark) inset !important;
+    background: linear-gradient(var(--zasadka-dark) 2rem, transparent 2rem) !important;
+}
+
+body.light-mode #menitko #vsechny-polozky > .polozky-obal {
+    box-shadow: 0px 0px 0px 1px var(--zasadka-light) inset !important;
+    background: linear-gradient(var(--zasadka-light) 2rem, transparent 2rem) !important;
 }
 
 .portal_menu_hole {
     border: none !important;
 }
 
-
-.loginform-section{
-    background-color: var(--zasadka-dark) !important;
-    border-radius: 20px !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-body.light-mode .loginform-section{
-    background-color: var(--zasadka-light) !important;
-    border-radius: 20px !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-
-/* Custom design for the checkbox */
+/* Checkbox styles */
 input[type="checkbox"] {
-    -webkit-appearance: none; /* For Safari */
-    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none;
+    appearance: none;
     width: 20px !important;
     height: 20px !important;
-    border: 2px solid var(--text-color-light) ;
+    border: 2px solid var(--text-light);
     border-radius: 20px !important;
-    background: var(--text-color-dark) ;
+    background: var(--text-dark);
     cursor: pointer;
-    outline: none; /* Remove focus outline */
+    outline: none;
     display: inline-block;
 }
 
-body.light_mode input[type="checkbox"] {
-    background: var(--text-color-dark) !important;
-    border: 2px solid var(--text-color-dark);
-    }
+body.light-mode input[type="checkbox"] {
+    background: var(--text-dark) !important;
+    border: 2px solid var(--text-dark);
+}
 
-/* Style for the checked state */
 input[type="checkbox"]:checked {
     color: #fff;
-    background-color: var(--link-color) !important;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--link-color) !important;
+    background-color: var(--link) !important;
+    border: 2px solid var(--link) !important;
     border-radius: 20px;
 }
 
-body.light_mode input[type="checkbox"]:checked {
-    background-color: var(--link-color) !important;
-    border: 2px solid var(--link-color) !important;
-}
-
-
-body.light_mode #otevrit-vse, 
-body.light_mode #zavrit-vse, 
-body.light_mode #finder {
-    color: var(--text-color-light) !important;
-}
-
+/* Button styles */
 #finder, #otevrit-vse, #zavrit-vse {
     margin-bottom: 15px;
-
 }
+
 #finder a, #otevrit-vse a, #zavrit-vse a {
     display: flex;
-    color: var(--text-color-dark) !important;
-    background-color: var(--link-color) !important;
+    color: var(--text-dark) !important;
+    background-color: var(--link) !important;
     justify-content: center;
     align-items: center;
-    text-decoration: none; /* Remove underline from link */
+    text-decoration: none;
     width: 100px;
     height: 100%;
     padding: 5px;
     border-radius: 20px !important;
+}
 
+body.light-mode #otevrit-vse, 
+body.light-mode #zavrit-vse, 
+body.light-mode #finder {
+    color: var(--text-light) !important;
 }
 
 #finder a span, #otevrit-vse, #zavrit-vse {
-    color: var(--text-color-dark) !important; /* Use variable for text color */
+    color: var(--text-dark) !important;
 }
 
-
-
-/* Skrytie <use> elementu pre konkrétne SVG elementy */
-svg[data-sysid="menu-eagenda"] use {
-    display: none;
+/* uis-masonry-box styling */
+.uis-masonry-box {
+    color: var(--link) !important;
+    background-color: var(--zasadka-dark) !important;
 }
-svg[data-sysid="menu-dokumentace"] use {
-    display: none;
+body.light-mode .uis-masonry-box {
+    background-color: var(--zasadka-light) !important;
 }
-svg[data-sysid="menu-elearning"] use {
-    display: none;
-}
-svg[data-sysid="menu-info"] use {
-    display: none;
-}
-svg[data-sysid="menu-os-management"] use {
-    display: none;
-}
-svg[data-sysid="menu-nastaveni"] use {
-    display: none;
-}
-svg[data-sysid="menu-personalizace"] use {
-    display: none;
-}
-svg[data-sysid="menu-technologie"] use {
-    display: none;
-}
-svg[data-sysid="menu-moje-studium"] use {
-    display: none;
-}
-svg[data-sysid="menu-veda-vyzkum"] use {
-    display: none;
-}
-svg[data-sysid="menu-herna"] use {
-    display: none;
-}
-svg[data-sysid="menu-osobni-udaje"] use {
-    display: none;
-}
-
-
-
