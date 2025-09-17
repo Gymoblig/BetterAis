@@ -7,7 +7,7 @@
             --background-gradient-light: linear-gradient(180deg, #ffffff, #f0f0f0);
             --text-color-dark: #e0e0e0;
             --text-color-light: #333333;
-            --link-color: #4a90e2;
+            --link: #4a90e2;
             --link-hover-dark: #336799;
             --link-hover-light: #295786;
             --shadow-color-dark: rgba(0, 123, 255, 0.5);
@@ -75,7 +75,7 @@
         .switch-label {
             font-size: 14px;
             font-weight: bold;
-            color: var(--link-color);
+            color: var(--link);
             flex: 1;
             text-align: center;
         }
@@ -118,7 +118,7 @@
         }
 
         input:checked + .slider {
-            background-color: var(--link-color);
+            background-color: var(--link);
         }
 
         input:checked + .slider:before {
@@ -169,7 +169,7 @@
         }
 
         .button:hover {
-            background-color: var(--link-hover-dark);
+            background-color: var(--link);
         }
     </style>
 </head>

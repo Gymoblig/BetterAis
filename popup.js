@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         themeSwitch.checked = theme === 'light';
         document.body.classList.toggle('dark-mode', theme === 'dark');
         document.body.classList.toggle('light-mode', theme === 'light');
-        document.documentElement.style.setProperty('--link-color', linkColor);
+        document.documentElement.style.setProperty('--link', linkColor);
 
         // Highlight the selected color option
         colorOptions.forEach(option => {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             chrome.storage.sync.set({ linkColor });
 
             // Update popup UI
-            document.documentElement.style.setProperty('--link-color', linkColor);
+            document.documentElement.style.setProperty('--link', linkColor);
             colorOptions.forEach(opt => opt.classList.remove('selected'));
             this.classList.add('selected');
 
