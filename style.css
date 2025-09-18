@@ -11,10 +11,14 @@
 }
 
 /* Base styles */
+html, body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif !important;
     transition: all 0.3s ease;
-    width: 100% !important;
     margin: 0;
     padding: 0;
 }
@@ -49,7 +53,6 @@ body.dark-mode .loginform-section {
     color: var(--text-dark);
     border-radius: 20px !important;
 }
-
 
 body.light-mode .login-container, 
 body.light-mode .highlightbox,
@@ -130,7 +133,7 @@ body.light-mode a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
 }
 
 #svatek {
@@ -153,19 +156,21 @@ body.light-mode a {
 }
 
 [aria-label="breadcrumb"] {
-    margin-top: 20px !important;
+    margin: 80px auto 50px auto !important;
     border-radius: 20px !important;
     height: fit-content !important;
     display: flex !important;
     align-items: center !important;
+    border: var(--zasadka-light) 1px solid !important;
+    max-width: 1000px !important;
 }
 
 body.dark-mode [aria-label="breadcrumb"] {
-    background-color: var(--zasadka-dark) !important;
+    background: linear-gradient(135deg, var(--link) , var(--zasadka-dark) 40%) !important;
 }
 
 body.light-mode [aria-label="breadcrumb"] {
-    background-color: var(--zasadka-light) !important;
+    background: linear-gradient(135deg, var(--link), var(--zasadka-light) 40%) !important;
 }
 
 #login-btn {
@@ -184,16 +189,17 @@ body.light-mode [aria-label="breadcrumb"] {
 .loginform-section {
     padding: 10px !important;
     margin-bottom: 15px !important;
-    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
 }
 
 .login-container, .highlightbox {
-    width: 100%;
     max-width: 400px;
     padding: 20px;
     border-radius: 20px !important;
     border-color: transparent !important;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 input[type="text"], input[type="password"] {
@@ -367,6 +373,25 @@ input[type="checkbox"]:checked {
     border-radius: 20px !important;
 }
 
+
+body.dark-mode .obsah{
+    background-color: var(--bg-dark) !important;
+    opacity: 100% !important;
+    border:var(--link) 1px solid !important;
+
+}
+body.light-mode .obsah{
+    background-color: var(--bg-light) !important;
+    opacity: 100% !important;
+    border:var(--link) 1px solid !important;
+
+}
+
+big b {
+    color: var(--link) !important;
+}
+
+
 body.light-mode #otevrit-vse, 
 body.light-mode #zavrit-vse, 
 body.light-mode #finder {
@@ -384,4 +409,23 @@ body.light-mode #finder {
 }
 body.light-mode .uis-masonry-box {
     background-color: var(--zasadka-light) !important;
+}
+
+#menu{
+    font-size: 18px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-bottom: #f0f0f0 1px solid !important;
+}
+
+body.dark-mode .bunka_seda {
+    border-radius: 20px !important;
+    background-color: var(--zasadka-dark) !important;
+    color: var(--text-dark) !important;
+}
+
+body.light-mode .bunka_seda {
+    border-radius: 20px !important;
+    background-color: var(--zasadka-light) !important;
+    color: var(--text-light) !important;
 }
