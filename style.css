@@ -456,3 +456,7 @@ body.dark-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans
 body.light-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans-serif; font-size: 10px;padding: 0 !important; border-style: solid; border-width: 0px 0px 0px 0px; border-color: #F3F3F3;background-color: #c0c0c0;"]{
   background-color: var(--text-dark) !important;
 }
+
+#nadpis{
+    color: var(--text-dark) !important;
+}
