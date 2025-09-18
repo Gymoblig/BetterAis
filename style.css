@@ -128,6 +128,14 @@ body.light-mode a {
     color: var(--link);
 }
 
+
+
+.zahlavi-main .odsazena{
+    color: var(--link) !important;
+    font-weight: bold !important;
+}
+
+
 /* Common element styles */
 #ie1 {
     display: flex;
@@ -288,6 +296,7 @@ body.light-mode .zahlavi {
     background-color: var(--zasadka-light) !important;
 }
 
+
 .zasadka, .zasadky-crit, .zasadky-info {
     max-width: 500px;
     border-radius: 20px !important;
@@ -428,4 +437,22 @@ body.light-mode .bunka_seda {
     border-radius: 20px !important;
     background-color: var(--zasadka-light) !important;
     color: var(--text-light) !important;
+}
+
+
+/* výnimky pre konkrétne bunky */
+body.dark-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans-serif; font-size: 10px;padding: 0 !important; border-style: solid; border-width: 0px 0px 0px 0px; border-color: #F3F3F3;border-right: solid 1px black;background-color: #d99694;"]{
+  background-color: var(--link) !important;
+}
+
+body.light-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans-serif; font-size: 10px;padding: 0 !important; border-style: solid; border-width: 0px 0px 0px 0px; border-color: #F3F3F3;border-right: solid 1px black;background-color: #d99694;"]{
+  background-color: var(--link) !important;
+}
+
+body.dark-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans-serif; font-size: 10px;padding: 0 !important; border-style: solid; border-width: 0px 0px 0px 0px; border-color: #F3F3F3;background-color: #c0c0c0;"]{
+  background-color: var(--text-light) !important;
+}
+
+body.light-mode td.odsazena[style="font-family: verdana,arial,helvetica,sans,sans-serif; font-size: 10px;padding: 0 !important; border-style: solid; border-width: 0px 0px 0px 0px; border-color: #F3F3F3;background-color: #c0c0c0;"]{
+  background-color: var(--text-dark) !important;
 }
