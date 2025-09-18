@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "BetterAis",
   "version": "1.1",
-  "description": "Visual change of the is.stuba.sk website.",
+  "description": "Enhance your STU IS (is.stuba.sk) experience: 🌙 Toggle dark/light themes instantly, 🎨 customize colors from predefined palettes, 💾 save your preferences automatically, and ⚡ access all options quickly via the popup.",
   "permissions": [
     "storage",
     "activeTab",
